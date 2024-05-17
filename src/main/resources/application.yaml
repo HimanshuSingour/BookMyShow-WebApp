@@ -1,0 +1,18 @@
+server:
+  port: 7089
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/BOOKMS
+    username: root
+    password: Pavilion@12
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+      show-sql: true
+    hibernate:
+      ddl-auto: update
+
+  main:
+    allow-circular-references: true
