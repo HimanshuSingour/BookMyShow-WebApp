@@ -6,7 +6,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
 import java.util.Map;
 
 @Data
@@ -30,5 +29,9 @@ public class BMCMovieEntity {
     private String M_SeatAvailable;
     private String M_BookedSeat;
 
+    @ElementCollection
+    @CollectionTable(name = "seat_price_mapping", joinColumns = @JoinColumn(name = "M_Id"))
+    @MapKeyColumn(name = "seat_type")
+    @Column(name = "price")
     private Map<String, String> M_SeatPrice;
 }
